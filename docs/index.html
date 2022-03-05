@@ -1,0 +1,172 @@
+<!doctype html>
+<!--
+  Material Design Lite
+  Copyright 2015 Google Inc. All rights reserved.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      https://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License
+-->
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>PRO annotations on Weblogs</title>
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="images/android-desktop.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="ADR annotation on Weblogs">
+    <link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    <link rel="shortcut icon" href="images/favicon.png">
+    
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/atom-one-dark-reasonable.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+    <!--
+    <link rel="canonical" href="http://www.example.com/">
+    -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.teal-red.min.css">
+    <link rel="stylesheet" href="styles.css">
+    
+  </head>
+  <body>
+    <div class="demo-layout mdl-layout mdl-layout--fixed-header mdl-js-layout mdl-color--grey-100">
+      <header class="demo-header mdl-layout__header mdl-layout__header--scroll mdl-color--grey-100 mdl-color-text--grey-800">
+        <div class="mdl-layout__header-row">
+          <span class="mdl-layout-title">PRO annotations on Weblogs</span>
+          <div class="mdl-layout-spacer"></div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+            <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+              <i class="material-icons">search</i>
+            </label>
+            <div class="mdl-textfield__expandable-holder">
+              <input class="mdl-textfield__input" type="text" id="search">
+              <label class="mdl-textfield__label" for="search">Enter your query...</label>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="demo-ribbon"></div>
+      <main class="demo-main mdl-layout__content">
+        <div class="demo-container mdl-grid">
+          <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+          <div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+            <h3>ADR annotation on Weblogs</h3>
+           <p>
+           薬物有害反応は患者の Quality-of-Life の著しい低下を招き，また生命を脅かす深刻な問題です．闘病ブログのような患者自身が作成した Web 上の文章は，薬物有害反応の有力な情報源として注目されています．
+           </p>
+           <p>
+          本データセットは，医薬品の奏功情報を文脈付きでアノテーションした初めてのデータセットです．
+          患者が作成したブログ記事をクロールし，そこで報告されている医薬品の効果についてアノテーションしました．
+          具体的には，奏功情報を記述するスパンを特定し，関連する薬剤名，症状を表す標準コード（ICD-10, MedDRA），効果の種類を示すラベルをアノテーションしています．
+          </p>
+          <p>
+          本データセットについての詳細は下記の文献をご参照ください．<br>
+          Yuki Arase, Tomoyuki Kajiwara, Chenhui Chu. 2020. Annotation of Adverse Drug Reactions in Patients' Weblogs. in Proceedings of the 12th Edition of its Language Resources and Evaluation Conference (LREC 2020). May 2020.<br>
+           * 本データセットを使用した成果を出版する際は，上記の文献を引用してください．
+           </p>
+
+            <h3>データセット</h3>
+             <p>
+             URL とアノテーション情報のみからなるメタデータを公開します．<br>
+             <a href="https://github.com/yukiar/pro-jp/blob/main/data/PRO_weblog.json">PRO_weblog.json</a>
+             </p>
+             <p>
+             データ例を下記に示します．
+             </p>
+             <p>
+             </p><pre><code class="language-python">
+[
+    {
+        'index': '735',
+        'sentence': '浮腫が始まるようですね目がだんだんあきずらくなってきてます',
+        'url': 'http://ameblo.jp/ta10230222ta10230222/entry-12447141085.html'
+        'label': {
+            'span': '浮腫が始まる',
+            'start_idx': '1',
+            'end_idx': '6',
+            'medicine': 'ラムシルマブ',
+            'icd10': 'R609',
+            'meddra': '浮腫',
+            'effect_type': 'side-effect-positive'
+        }
+    },
+    ...
+]
+                 </code>
+             </pre>
+             <p></p>
+             <p>
+                データ構造は下記の通りです．
+                </p><dl>
+                    <dt>url</dt>
+                    <dd>アノテーション対象のブログ記事の URL．この情報を基に文章を復元してください</dd>
+                    <dt>sentence</dt>
+                    <dd>アノテーション対象の文</dd>
+                    <dt>index</dt>
+                    <dd>データのインデックス (1-origin)</dd>
+                    <dt>label</dt>
+                    <dd>
+                        アノテーション情報
+                        <br><b>span: </b>奏功情報を示すスパンの文字列
+                        <br><b>start_idx: </b>スパンの文内での開始位置（1-origin）
+                        <br><b>end_idx: </b>スパンの文内での終了位置（1-origin）
+                        <br><b>medicine: </b>医薬品名
+                        <br><b>icd10: </b>ICD10 コード
+                        <br><b>meddra: </b>MedDRA コード
+                        <br><b>effect_type: </b>効果の種類
+                    </dd>
+                </dl>
+              <p>
+              一部リンク切れにより復元不可能なデータが存在します．完全版が必要な場合は下記連絡先にお問い合わせください．
+              </p>
+              <h3>連絡先</h3>
+              <p>
+              本データセットに関するお問い合わせは下記にお願いいたします：<br>
+              <a href="http://www-bigdata.ist.osaka-u.ac.jp/professor/arase/arase_jp.html">荒瀬由紀</a>  arase-AT-ist.osaka-u.ac.jp (-AT- を @ マークに置き換えてください) 
+              </p>
+          </div>
+        </div>
+        <footer class="demo-footer mdl-mini-footer">
+          <div class="mdl-mini-footer--left-section">
+            <ul class="mdl-mini-footer--link-list">
+            <li><a href="http://www-bigdata.ist.osaka-u.ac.jp/ja/home/">大阪大学 鬼塚研究室</a></li>
+            <!--
+              <li><a href="#">Help</a></li>
+              <li><a href="#">Privacy and Terms</a></li>
+              <li><a href="#">User Agreement</a></li>
+              -->
+            </ul>
+          </div>
+        </footer>
+      </main>
+    </div>
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  </body>
+</html>
