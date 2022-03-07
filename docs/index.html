@@ -68,13 +68,14 @@
         <div class="demo-container mdl-grid">
           <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
           <div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
-            <h3>ADR annotation on Weblogs</h3>
+            <h3>PRO annotation on Weblogs</h3>
            <p>
-           薬物有害反応は患者の Quality-of-Life の著しい低下を招き，また生命を脅かす深刻な問題です．闘病ブログのような患者自身が作成した Web 上の文章は，薬物有害反応の有力な情報源として注目されています．
+           医薬品の開発においては，患者報告アウトカム（Patient Reported Outcomes; PRO）と呼ばれる，患者自身による主観的な評価が活用されています．
+           PRO の有力な情報源として，闘病ブログ等，患者自身が作成した Web コンテンツの活用が期待されています．
            </p>
            <p>
           本データセットは，医薬品の奏功情報を文脈付きでアノテーションした初めてのデータセットです．
-          患者が作成したブログ記事をクロールし，そこで報告されている医薬品の効果についてアノテーションしました．
+          患者が作成したブログ記事をクロールし，そこで報告されている医薬品の奏功情報についてアノテーションしました．
           具体的には，奏功情報を記述するスパンを特定し，関連する薬剤名，症状を表す標準コード（ICD-10, MedDRA），効果の種類を示すラベルをアノテーションしています．
           </p>
           <p>
@@ -85,19 +86,17 @@
 
             <h3>データセット</h3>
              <p>
-             URL とアノテーション情報のみからなるメタデータを公開します．<br>
+             URL とアノテーション情報のみからなるメタデータを公開します．URL を用いて記事をクロールし，全文を復元してください．<br>
              <a href="https://github.com/yukiar/pro_jp/blob/main/data/PRO_weblog.json">PRO_weblog.json</a>
              </p>
-             <p>
-             データ例を下記に示します．
-             </p>
+             <h4>データ例</h4>
              <p>
              </p><pre><code class="language-python">
 [
     {
         'index': '735',
         'sentence': '浮腫が始まるようですね目がだんだんあきずらくなってきてます',
-        'url': 'http://ameblo.jp/ta10230222ta10230222/entry-12447141085.html'
+        'url': 'http://ameblo.jp/ta10230222ta10230222/entry-12447141085.html',
         'label': {
             'span': '浮腫が始まる',
             'start_idx': '1',
@@ -110,18 +109,15 @@
     },
     ...
 ]
-                 </code>
-             </pre>
-             <p></p>
-             <p>
-                データ構造は下記の通りです．
-                </p><dl>
+              </code></pre>
+              <h4>データ構造</h4>
+                 <dl>
+                    <dt>index</dt>
+                    <dd>データのインデックス (1-origin)</dd>
                     <dt>url</dt>
                     <dd>アノテーション対象のブログ記事の URL．この情報を基に文章を復元してください</dd>
                     <dt>sentence</dt>
                     <dd>アノテーション対象の文</dd>
-                    <dt>index</dt>
-                    <dd>データのインデックス (1-origin)</dd>
                     <dt>label</dt>
                     <dd>
                         アノテーション情報
@@ -135,7 +131,7 @@
                     </dd>
                 </dl>
               <p>
-              一部リンク切れにより復元不可能なデータが存在します．完全版が必要な場合は下記連絡先にお問い合わせください．
+              一部リンク切れにより復元不可能なデータが存在します．完全版が必要な場合は下記連絡先にお問い合わせください．個別に配布いたします．
               </p>
               <h3>連絡先</h3>
               <p>
@@ -148,11 +144,6 @@
           <div class="mdl-mini-footer--left-section">
             <ul class="mdl-mini-footer--link-list">
             <li><a href="http://www-bigdata.ist.osaka-u.ac.jp/ja/home/">大阪大学 鬼塚研究室</a></li>
-            <!--
-              <li><a href="#">Help</a></li>
-              <li><a href="#">Privacy and Terms</a></li>
-              <li><a href="#">User Agreement</a></li>
-              -->
             </ul>
           </div>
         </footer>
