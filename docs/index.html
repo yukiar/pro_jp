@@ -94,13 +94,13 @@
              </p><pre><code class="language-python">
 [
     {
-        'index': '735',
+        'index': 734,
         'sentence': '浮腫が始まるようですね目がだんだんあきずらくなってきてます',
         'url': 'http://ameblo.jp/ta10230222ta10230222/entry-12447141085.html',
         'label': {
             'span': '浮腫が始まる',
-            'start_idx': '1',
-            'end_idx': '6',
+            'start_idx': 0,
+            'end_idx': 5,
             'medicine': 'ラムシルマブ',
             'icd10': 'R609',
             'meddra': '浮腫',
@@ -113,7 +113,7 @@
               <h4>データ構造</h4>
                  <dl>
                     <dt>index</dt>
-                    <dd>データのインデックス (1-origin)</dd>
+                    <dd>データのインデックス</dd>
                     <dt>url</dt>
                     <dd>アノテーション対象のブログ記事の URL．この情報を基に文章を復元してください</dd>
                     <dt>sentence</dt>
@@ -122,8 +122,8 @@
                     <dd>
                         アノテーション情報
                         <br><b>span: </b>奏功情報を示すスパンの文字列
-                        <br><b>start_idx: </b>スパンの文内での開始位置（1-origin）
-                        <br><b>end_idx: </b>スパンの文内での終了位置（1-origin）
+                        <br><b>start_idx: </b>スパンの文内での開始位置
+                        <br><b>end_idx: </b>スパンの文内での終了位置
                         <br><b>medicine: </b>医薬品名
                         <br><b>icd10: </b>ICD10 コード
                         <br><b>meddra: </b>MedDRA コード
